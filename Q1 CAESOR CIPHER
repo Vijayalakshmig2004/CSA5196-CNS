@@ -1,0 +1,13 @@
+def caesar_cipher(txt, k):
+    res = ""    
+    for char in txt:
+        if char.isalpha():  
+            shift = ord('A') if char.isupper() else ord('a')
+            res+= chr((ord(char) - shift + k) % 26 + shift)
+        else:
+            res+=char  
+    return res
+txt = input("Enter the text to encrypt: ")
+k = int(input("Enter shift value (1-25): "))
+etxt = cc(text, k)
+print("Encrypted text:", etxt)
